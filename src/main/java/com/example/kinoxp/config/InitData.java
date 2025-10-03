@@ -30,5 +30,16 @@ public class InitData implements CommandLineRunner {
 
         movieRepository.save(movie1);
 
+        Movie movie2 = new Movie();
+        movie2.setMovie_title("Interstellar2");
+        movie2.setMovie_duration(169);
+        movie2.setMovie_actors("Matthew McConaughey, Anne Hathaway, Jessica Chastain");
+        movie2.setMovie_age_req(8);
+        movie2.setMovie_period_start(LocalDate.of(2025, 10, 1));
+        movie2.setMovie_period_end(LocalDate.of(2025, 12, 1));
+        movie2.setMovie_genre(Genre.ADVENTURE);
+
+        movieRepository.save(movie2);
+
     }
 }

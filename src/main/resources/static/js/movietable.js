@@ -1,11 +1,7 @@
-
+import {fetchAnyUrl} from "./modulejson.js";
 console.log("vi er i movietable")
-import {fetchAnyUrl} from "/js/modulejson.js";
-
 
 const urlGetMovies = "http://localhost:8080/movies"
-
-const pbCreateMovieTable = document.getElementById("pbGetMovies")
 
 const tblMovies = document.getElementById("tblMovies")
 
@@ -58,5 +54,4 @@ function createTable(movie) {
 
 }
 
-
-pbCreateMovieTable.addEventListener("click", actionGetMovies)
+actionGetMovies()
