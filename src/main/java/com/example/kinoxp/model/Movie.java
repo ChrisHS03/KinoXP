@@ -17,12 +17,14 @@ public class Movie {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int movie_id;
     private String movie_title;
+    private String movie_description;
     private int movie_duration;
     private String movie_actors;
     private int movie_age_req;
     private LocalDate movie_period_start;
     private LocalDate movie_period_end;
     private Genre movie_genre;
+    private String movie_photo_href;
 
 
     public int getMovie_id() {
@@ -88,5 +90,21 @@ public class Movie {
 
     public void setMovie_genre(Genre movie_genre) {
         this.movie_genre = movie_genre;
+    }
+
+    public String getMovie_photo_href() {
+        return movie_photo_href;
+    }
+
+    public void setMovie_photo_href(String movie_photo_href) {
+        this.movie_photo_href = movie_photo_href;
+    }
+
+    public String getMovie_description() {
+        return movie_description;
+    }
+
+    public void setMovie_description(String movie_description) {
+        this.movie_description = movie_description;
     }
 }
