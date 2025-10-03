@@ -1,3 +1,5 @@
+
+
 package com.example.kinoxp.controller;
 
 import com.example.kinoxp.model.Role;
@@ -14,7 +16,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "*")
 public class LoginController {
 
     @Autowired
@@ -41,26 +42,6 @@ public class LoginController {
         }
     }
 
-    @PostMapping("/register-employee")
-    public ResponseEntity<?> registerEmployee(@RequestBody Map<String, String> request) {
-        try {
-            String username = request.get("username");
-            String password = request.get("password");
-
-            User savedUser = userService.registerUser(username, password, Role.EMPLOYEE);
-
-            Map<String, Object> response = new HashMap<>();
-            response.put("id", savedUser.getId());
-            response.put("username", savedUser.getUsername());
-            response.put("role", savedUser.getRole());
-
-            return ResponseEntity.ok(response);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
-        } catch (Exception e) {
-            return ResponseEntity.badRequest().body("Registration failed");
-        }
-    }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> request, HttpSession session) {
