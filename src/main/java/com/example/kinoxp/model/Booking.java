@@ -18,6 +18,7 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name = "show_id", referencedColumnName = "show_id", nullable = false)
+    private Show show;
 
     @Column(nullable = false)
     private LocalDateTime bookingTime;
