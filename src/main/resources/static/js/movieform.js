@@ -9,8 +9,16 @@ function getMovieIdFromUrl() {
     return params.get("id");
 }
 
-function fillForm(){
-
+function fillForm(movie){
+    document.getElementById("inpTitle").value = movie.movie_title || "";
+    document.getElementById("inpDescription").value = movie.movie_description || "";
+    document.getElementById("inpDuration").value = movie.movie_duration || "";
+    document.getElementById("inpActors").value = movie.movie_actors || "";
+    document.getElementById("inpAgeReq").value = movie.movie_age_req || "";
+    document.getElementById("inpMovieStart").value = movie.movie_period_start || "";
+    document.getElementById("inpMovieEnd").value = movie.movie_period_end || "";
+    document.getElementById("inpGenre").value = movie.movie_genre || "";
+    document.getElementById("inpPhotoHref").value = movie.movie_photo_href || "";
 
 }
 
@@ -35,8 +43,10 @@ function checkForId(){
 checkForId()
 
 document.addEventListener('DOMContentLoaded',createFormEventListener)
+
 let movieForm;
 const movieCreateUrl = "http://localhost:8080/createmovie"
+const movieUpdateUrl = "http://localhost:8080/updatemovie/"
 
 
 
@@ -54,12 +64,27 @@ async function handleFormSubmit(event) {
         const formData = new FormData(movieForm);
         const plainFormData = Object.fromEntries(formData.entries());
         console.log(formData);
-        const responseData = await postObjectAsJson(movieCreateUrl, plainFormData);
-        console.log(responseData)
+
+        let responseData;
+
+        if (urlGetMovieID) {
+            // UPDATE
+            console.log("Opdaterer film med id:", urlGetMovieID);
+            responseData = await updateObjectAsJson(movieUpdateUrl + urlGetMovieID, plainFormData);
+        } else {
+            // CREATE
+            console.log("Opretter ny film");
+            responseData = await postObjectAsJson(movieCreateUrl, plainFormData);
+        }
+
+        console.log(responseData);
 
         if (responseData.ok) {
             alert("Movie saved successfully!")
             window.location.href = `index.html`;
+        } else if (responseData.status === 403) {
+            // Kun EMPLOYEE har adgang
+            alert("Access denied: You do not have permission to create a movie.");
         } else {
             alert("Input type wrong. " + "Failed to save movie. Status: " + responseData.status);
         }

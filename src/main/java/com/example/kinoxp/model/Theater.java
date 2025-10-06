@@ -15,16 +15,16 @@ public class Theater {
     private String name;
 
     @Column(nullable = false)
-    private int rows;
+    private int seatRows;
 
     @Column(nullable = false)
     private int seatsPerRow;
 
     public Theater() {}
-    public Theater(Integer id, String name, int rows, int seatsPerRow) {
+    public Theater(Integer id, String name, int seatRows, int seatsPerRow) {
         this.theater_id = id;
         this.name = name;
-        this.rows = rows;
+        this.seatRows = seatRows;
         this.seatsPerRow = seatsPerRow;
     }
 
@@ -44,12 +44,20 @@ public class Theater {
         this.name = name;
     }
 
-    public int getRows() {
-        return rows;
+    public Integer getTheater_id() {
+        return theater_id;
     }
 
-    public void setRows(int rows) {
-        this.rows = rows;
+    public void setTheater_id(Integer theater_id) {
+        this.theater_id = theater_id;
+    }
+
+    public int getSeatRows() {
+        return seatRows;
+    }
+
+    public void setSeatRows(int seatRows) {
+        this.seatRows = seatRows;
     }
 
     public int getSeatsPerRow() {
