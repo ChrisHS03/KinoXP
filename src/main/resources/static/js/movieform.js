@@ -82,6 +82,9 @@ async function handleFormSubmit(event) {
         if (responseData.ok) {
             alert("Movie saved successfully!")
             window.location.href = `index.html`;
+        } else if (responseData.status === 403) {
+            // Kun EMPLOYEE har adgang
+            alert("Access denied: You do not have permission to create a movie.");
         } else {
             alert("Input type wrong. " + "Failed to save movie. Status: " + responseData.status);
         }
