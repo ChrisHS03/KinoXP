@@ -9,7 +9,8 @@ public class Theater {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer theater_id;
+    @Column(name = "theater_id")
+    private Integer theaterId;
 
     @Column(nullable = false, length = 50)
     private String name;
@@ -21,19 +22,18 @@ public class Theater {
     private int seatsPerRow;
 
     public Theater() {}
-    public Theater(Integer id, String name, int seatRows, int seatsPerRow) {
-        this.theater_id = id;
+    public Theater(String name, int rows, int seatsPerRow) {
         this.name = name;
         this.seatRows = seatRows;
         this.seatsPerRow = seatsPerRow;
     }
 
-    public Integer getId() {
-        return theater_id;
+    public Integer getTheaterId() {
+        return theaterId;
     }
 
-    public void setId(Integer id) {
-        this.theater_id = id;
+    public void setTheaterId(Integer theaterId) {
+        this.theaterId = theaterId;
     }
 
     public String getName() {
@@ -42,14 +42,6 @@ public class Theater {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getTheater_id() {
-        return theater_id;
-    }
-
-    public void setTheater_id(Integer theater_id) {
-        this.theater_id = theater_id;
     }
 
     public int getSeatRows() {
