@@ -1,7 +1,6 @@
 package com.example.kinoxp.model;
 
 import jakarta.persistence.*;
-import com.example.kinoxp.model.Role;
 
 @Entity
 @Table(name = "users")
