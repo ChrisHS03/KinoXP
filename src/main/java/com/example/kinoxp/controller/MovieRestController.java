@@ -22,6 +22,11 @@ public class MovieRestController {
         return movieRepository.findAll();
     }
 
+    @GetMapping("/movie/{id}")
+    public Movie getMovie(@PathVariable int id){
+        return movieRepository.findById(id).get();
+    }
+
     @PostMapping("/createmovie")
     @ResponseStatus(HttpStatus.CREATED)
     public Movie createMovie(@RequestBody Movie movie) {
