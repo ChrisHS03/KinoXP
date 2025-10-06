@@ -16,7 +16,7 @@ public class Seat {
     @JoinColumn(name = "booking_id", referencedColumnName = "booking_id", nullable = false)
     private Booking booking;
 
-    @Column(nullable = false)
+    @Column(name = "seat_rows", nullable = false)
     private int seatRows;
 
     @Column(nullable = false)

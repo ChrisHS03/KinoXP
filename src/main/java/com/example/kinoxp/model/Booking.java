@@ -28,8 +28,9 @@ public class Booking {
     private int numberOfSeats;
 
     public Booking() {}
-    public Booking(User user, LocalDateTime bookingTime, int numberOfSeats) {
+    public Booking(User user, Show show, LocalDateTime bookingTime, int numberOfSeats) {
         this.user = user;
+        this.show = show;
         this.bookingTime = bookingTime;
         this.numberOfSeats = numberOfSeats;
     }

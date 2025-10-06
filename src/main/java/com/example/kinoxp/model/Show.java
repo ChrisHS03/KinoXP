@@ -40,7 +40,7 @@ public class Show {
         return showId;
     }
 
-    public void setShowId(Integer showid) {
+    public void setShowId(Integer showId) {
         this.showId = showId;
     }
 
