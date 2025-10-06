@@ -22,7 +22,7 @@ public class Theater {
     private int seatsPerRow;
 
     public Theater() {}
-    public Theater(String name, int rows, int seatsPerRow) {
+    public Theater(String name, int seatRows, int seatsPerRow) {
         this.name = name;
         this.seatRows = seatRows;
         this.seatsPerRow = seatsPerRow;
