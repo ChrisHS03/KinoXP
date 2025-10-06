@@ -41,7 +41,6 @@ async function init() {
 init(); // start alt
 
 
-
 function createTable(movie) {
     let cellCount = 0
     let rowCount = tblMovies.rows.length
@@ -93,12 +92,15 @@ function createTable(movie) {
         pbDelete.setAttribute("value", "Delete Movie");
         cell.appendChild(pbDelete);
 
-    row.id = movie.movie_title
-    pbDelete.onclick = async function (event) {
-        event.stopPropagation()
-        document.getElementById(movie.movie_title).remove()
-        await deleteObjectAsJson(urlDeleteMovie + movie.movie_id)
+        row.id = movie.movie_title
+        pbDelete.onclick = async function (event) {
+            event.stopPropagation()
+            document.getElementById(movie.movie_title).remove()
+            await deleteObjectAsJson(urlDeleteMovie + movie.movie_id)
+        }
     }
-}  }
+
+
+}
 
 
