@@ -65,4 +65,30 @@ async function fetchAnyUrl(url) {
 
  */
 
-export {postObjectAsJson, fetchAnyUrl, updateObjectAsJson, deleteObjectAsJson}
+
+
+
+async function fetchSession() {
+    const urlSession = "http://localhost:8080/api/auth/session";
+    try {
+        const response = await fetch(urlSession, {
+            method: "GET",
+            credentials: "include" // vigtige for cookies/session
+        });
+
+        if (!response.ok) {
+            console.log("Bruger er ikke logget ind");
+            return null;
+        }
+
+        const user = await response.json();
+        console.log("Session user:", user);
+        return user;
+    } catch (err) {
+        console.error("Fejl ved hent af session:", err);
+        return null;
+    }
+}
+
+
+export {postObjectAsJson, fetchAnyUrl, updateObjectAsJson, deleteObjectAsJson, fetchSession}
