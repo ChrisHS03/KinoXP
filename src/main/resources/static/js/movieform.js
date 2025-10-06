@@ -1,11 +1,43 @@
-import {postObjectAsJson} from "./modulejson.js";
-
+import {postObjectAsJson, fetchAnyUrl, updateObjectAsJson} from "./modulejson.js";
 console.log("Jeg er i movieForm")
 
+let urlGetMovieID = getMovieIdFromUrl()
+const urlGetMovie = "http://localhost:8080/movie/"
+
+function getMovieIdFromUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id");
+}
+
+function fillForm(){
+
+
+}
+
+async function fetchMovie() {
+    let finalUrl = urlGetMovie + urlGetMovieID
+    console.log(finalUrl)
+    let movie = await fetchAnyUrl(finalUrl);
+    console.log(movie)
+    if (movie) {
+        fillForm(movie)
+    } else {
+        alert("Fejl ved kald til backend url=" + finalUrl + " vil du vide mere så kig i Console")
+    }
+}
+
+function checkForId(){
+    if(urlGetMovieID){
+        fetchMovie()
+    }
+}
+
+checkForId()
 
 document.addEventListener('DOMContentLoaded',createFormEventListener)
 let movieForm;
 const movieCreateUrl = "http://localhost:8080/createmovie"
+
 
 
 function createFormEventListener() {

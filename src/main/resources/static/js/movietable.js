@@ -63,6 +63,17 @@ function createTable(movie) {
     cell = row.insertCell(cellCount++);
     cell.innerHTML = `<img src="${movie.movie_photo_href}" alt="Movie Photo" style="width:100px; height:auto;">`;
 
+    const pbUpdate = document.createElement("input");
+    pbUpdate.type = "button";
+    pbUpdate.className = "btn1"
+    pbUpdate.setAttribute("value", "Update Movie");
+    cell.appendChild(pbUpdate);
+
+    pbUpdate.onclick = async function (event) {
+        event.stopPropagation()
+        window.location.href = `movieform.html?id=${movie.movie_id}`;
+    }
+
     const pbDelete = document.createElement("input");
     pbDelete.type = "button";
     pbDelete.className = "btn1"
