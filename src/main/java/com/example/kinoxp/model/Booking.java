@@ -10,7 +10,8 @@ public class Booking {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer booking_id;
+    @Column(name = "booking_id")
+    private Integer bookingId;
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
@@ -27,19 +28,18 @@ public class Booking {
     private int numberOfSeats;
 
     public Booking() {}
-    public Booking(Integer booking_id, User user, LocalDateTime bookingTime, int numberOfSeats) {
-        this.booking_id = booking_id;
+    public Booking(User user, LocalDateTime bookingTime, int numberOfSeats) {
         this.user = user;
         this.bookingTime = bookingTime;
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Integer getBooking_id() {
-        return booking_id;
+    public Integer getBookingId() {
+        return bookingId;
     }
 
-    public void setBooking_id(Integer booking_id) {
-        this.booking_id = booking_id;
+    public void setBookingId(Integer bookingId) {
+        this.bookingId = bookingId;
     }
 
     public User getUser() {

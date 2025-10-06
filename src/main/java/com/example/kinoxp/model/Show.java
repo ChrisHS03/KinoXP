@@ -11,7 +11,8 @@ public class Show {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer show_id;
+    @Column(name = "show_id")
+    private Integer showId;
 
     @ManyToOne
     @JoinColumn(name = "movie_id", referencedColumnName = "movie_id", nullable = false)
@@ -28,20 +29,19 @@ public class Show {
     private double price;
 
     public Show() {}
-    public Show(Integer id, Movie movie, Theater theater, LocalDateTime showTime, double price) {
-        this.show_id = id;
+    public Show(Movie movie, Theater theater, LocalDateTime showTime, double price) {
         this.movie = movie;
         this.theater = theater;
         this.showTime = showTime;
         this.price = price;
     }
 
-    public Integer getId() {
-        return show_id;
+    public Integer getShowId() {
+        return showId;
     }
 
-    public void setId(Integer id) {
-        this.show_id = id;
+    public void setShowId(Integer showid) {
+        this.showId = showId;
     }
 
     public Movie getMovie() {
