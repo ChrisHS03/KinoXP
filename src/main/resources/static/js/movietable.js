@@ -58,17 +58,7 @@ function createTable(movie) {
     cell = row.insertCell(cellCount++)
     cell.innerHTML = movie.movie_title
 
-    cell = row.insertCell(cellCount++)
-    const pbBook = document.createElement("input");
-    pbBook.type = "button";
-    pbBook.className = "btn1"
-    pbBook.setAttribute("value", "Book tickets");
-    cell.appendChild(pbBook);
 
-    pbBook.onclick = async function (event) {
-        event.stopPropagation()
-        window.location.href = `bookticket.html?id=${movie.movie_id}`;
-    }
 
     if (currentUser && currentUser.role === "EMPLOYEE") {
 
