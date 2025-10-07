@@ -83,17 +83,22 @@ pbBook.onclick = async function (event) {
 
 
 let currentUser = null;
+const pbCreateShow = document.getElementById("pbCreateShow");
 
 async function init() {
     currentUser = await fetchSession(); // vent på session-data
     console.log(currentUser?.role);
 
     // Skjul Create Show-knap hvis ikke EMPLOYEE
-    const btnCreateShow = document.getElementById("btnCreateShow");
     if (!currentUser || currentUser.role !== "EMPLOYEE") {
-        btnCreateShow.style.display = "none";
+        pbCreateShow.style.display = "none";
     }
 
-    // Hent film
-    await fetchMovies();
+
 }
+
+pbCreateShow.onclick = async function (event) {
+    window.location.href = `showform.html?id=${urlGetMovieID}`;
+}
+
+init()

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Show</title>
+</head>
+<body>
+<form id="formShow">
+    <div class="form-group"><label for="inpTitle"> Movie </label>
+        <input type="text" name="movie_title" class="inpField" id="inpTitle" required readonly>
+    </div>
+    <div class="form-group">
+        <label for="inpTheater">Theater</label>
+        <select name="movie_genre" id="inpTheater" class="inpField" required>
+            <option value="1">Theater 1(Big)</option>
+            <option value="2">Theater 2(Small)</option>
+        </select>
+    </div>
+    <div class="form-group"><label for="inpDate"> Date </label>
+        <input type="date" name="movie_title" class="inpField" id="inpDate" required>
+    </div>
+    <div class="form-group"><label for="inpTime"> Time </label>
+        <input type="time" name="movie_title" class="inpField" id="inpTime" required>
+    </div>
+    <div class="form-group"><label for="inpPrice"> Price </label>
+        <input type="number" name="movie_title" class="inpField" id="inpPrice" required>
+    </div>
+
+    <button type="submit" title="Save">Save Show</button>
+</form>
+<script type="module" src="js/showform.js"></script>
+
+</body>
+</html>
