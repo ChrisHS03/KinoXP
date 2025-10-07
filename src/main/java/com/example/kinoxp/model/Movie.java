@@ -1,13 +1,13 @@
 package com.example.kinoxp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import jakarta.persistence.*;
 import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Movie {
@@ -26,6 +26,17 @@ public class Movie {
     private Genre movie_genre;
     private String movie_photo_href;
 
+    @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL)
+    @JsonBackReference
+    private Set<Show> shows = new HashSet<>();
+
+    public Set<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(Set<Show> shows) {
+        this.shows = shows;
+    }
 
     public int getMovie_id() {
         return movie_id;
