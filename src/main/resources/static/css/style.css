@@ -1,0 +1,239 @@
+/* Import Limelight til overskrift */
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+/* Body tekst - neutral og letlæselig */
+body {
+    margin: 20px;
+    background-color: #fff; /* sort baggrund */
+    color: #000;            /* lys tekst */
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    text-transform: none;
+}
+
+/* H1 - dramatisk biografstil */
+h1 {
+    font-family: 'Limelight', sans-serif;
+    font-size: 80px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e30613;        /* klassisk biograf rød */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Container */
+.div1 {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Grid med film */
+#tblMovies {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 0;
+}
+
+/* Filmkort */
+.movie-card {
+    background-color: #e5e5e5; /* mørk sort/grå */
+
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* lille zoom ved hover */
+}
+
+/* Filmplakat */
+.movie-card img {
+    width: 150px;
+    height: 225px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin: 0 auto;/* Import Limelight til overskrift */
+    @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+    /* Body tekst - neutral og letlæselig */
+    body {
+        margin: 20px;
+        background-color: #e5e5e5;
+        color: #3e3e3e;            /* lys tekst */
+        font-family: 'Arial', sans-serif;
+        font-weight: 400;
+        line-height: 1.5;
+        letter-spacing: 1px;
+        text-transform: none;
+    }
+
+    /* H1 - dramatisk biografstil */
+    h1 {
+        font-family: 'Limelight', sans-serif;
+        font-size: 80px;
+        text-align: center;
+        margin-bottom: 20px;
+        color: #e30613;        /* klassisk biograf rød */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    /* Container */
+    .div1 {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Grid med film */
+    #tblMovies {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+        padding: 0;
+    }
+
+    /* Filmkort */
+    .movie-card {
+        background-color: #1a1a1a; /* mørk sort/grå */
+
+        padding: 10px;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        transition: transform 0.2s;
+    }
+
+    .movie-card:hover {
+        transform: scale(1.05); /* lille zoom ved hover */
+    }
+
+    /* Filmplakat */
+    .movie-card img {
+        width: 150px;
+        height: 225px;
+        object-fit: cover;
+        border-radius: 5px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    /* Film titel */
+    .movie-card h2 {
+        font-size: 16px;
+        margin: 10px 0 0 0;
+        color: #e30613; /* rød titel */
+    }
+
+    /* Knapper container */
+    .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 5px;
+    }
+
+    /* Knapper */
+    .btn1 {
+        display: inline-block;
+        text-decoration: none;
+        padding: 5px 10px;
+        border: none;
+        background-color:#e30613; /* rød baggrund */
+        color: #fff6e6;             /* gylden/hvid tekst */
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: background-color 0.2s;
+    }
+
+    .btn1:hover {
+        background-color: #ff7b7b; /* lysere rød ved hover */
+        color: #fff6e6;
+    }
+
+    display: block;
+}
+
+/* Film titel */
+.movie-card h2 {
+    font-size: 16px;
+    margin: 10px 0 0 0;
+    color: #000;
+}
+
+/* Knapper container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+/* Knapper */
+.btn1 {
+    display: inline-block;
+    text-decoration: none;
+    padding: 5px 10px;
+    border: none;
+    background-color: #e30613; /* rød baggrund */
+    color: #fff6e6;             /* gylden/hvid tekst */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.2s;
+}
+
+.btn1:hover {
+    background-color: #ff7b7b; /* lysere rød ved hover */
+    color: #fff6e6;
+}
+
+/*DROPDOWN*/
+
+/* Dropdown container */
+.select-container {
+    margin: 20px 0;
+    display: inline-block;
+}
+
+/* Selve dropdown */
+select {
+
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: 'Arial', sans-serif; /* matcher body tekst */
+    color: #000;                       /* sort tekst */
+    background-color: #fff;            /* lys baggrund */
+    border: 1px solid #ccc;            /* klassisk kant */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Hover og fokus */
+select:hover,
+select:focus {
+    border-color: #e30613; /* rød kant ved hover/fokus */
+    box-shadow: 0 0 5px rgba(227, 6, 19, 0.5);
+    outline: none;
+}
+
+/* Option styling */
+select option {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #000;
+    background-color: #fff;
+}
+

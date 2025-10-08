@@ -11,19 +11,19 @@ async function checkSession() {
         if (response.ok) {
             const data = await response.json();
             navLinks.innerHTML = `
-                <span>Velkommen, ${data.username}</span>
-                <button onclick="logout()">Log ud</button>
+                <span>Welcome ${data.username}</span>
+                <button class="btn1" onclick="logout()">Logout</button>
             `;
         } else {
             navLinks.innerHTML = `
-                <a href="login.html">Log ind</a>
-                <a href="register.html">Opret konto</a>
+                <a class="btn1" href="login.html">Login</a>
+                <a class="btn1" href="register.html">Register</a>
             `;
         }
     } catch (error) {
         document.getElementById('navLinks').innerHTML = `
-            <a href="login.html">Log ind</a>
-            <a href="register.html">Opret konto</a>
+            <a class="btn1" href="login.html">Login</a>
+            <a class="btn1" href="register.html">Register</a>
         `;
     }
 }
