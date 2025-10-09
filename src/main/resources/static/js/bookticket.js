@@ -15,7 +15,7 @@ async function loadShowInfo() {
         show = await fetchAnyUrl(`http://localhost:8080/api/shows/${showId}`);
 
         if (!show) {
-            alert('Show ikke fundet');
+            alert('Show not found');
             return;
         }
 
@@ -24,9 +24,9 @@ async function loadShowInfo() {
         // Vis show info
         document.getElementById('movieTitle').textContent = show.movie.movie_title;
         document.getElementById('showDetails').innerHTML = `
-            <strong>Teater:</strong> ${theater.name}<br>
-            <strong>Tidspunkt:</strong> ${new Date(show.showTime).toLocaleString('da-DK')}<br>
-            <strong>Pris:</strong> ${show.price} kr per billet
+            <strong>Theater:</strong> ${theater.name}<br>
+            <strong>Time:</strong> ${new Date(show.showTime).toLocaleString('da-DK')}<br>
+            <strong>Price:</strong> ${show.price} DKK/Ticket
         `;
 
         // Hent bookede sæder
@@ -36,8 +36,8 @@ async function loadShowInfo() {
         generateSeatGrid();
 
     } catch (error) {
-        console.error('Fejl ved indlæsning:', error);
-        alert('Kunne ikke indlæse show information');
+        console.error('Error loading. ', error);
+        alert('Error loading show information');
     }
 }
 
@@ -45,9 +45,9 @@ async function loadShowInfo() {
 async function loadBookedSeats() {
     try {
         bookedSeats = await fetchAnyUrl(`http://localhost:8080/api/shows/${showId}/booked-seats`);
-        console.log('Bookede sæder:', bookedSeats);
+        console.log('Booked seats: ', bookedSeats);
     } catch (error) {
-        console.error('Fejl ved hentning af bookede sæder:', error);
+        console.error('Error loading booked seats. ', error);
         bookedSeats = [];
     }
 }
@@ -67,7 +67,7 @@ function generateSeatGrid() {
         // Række label
         const label = document.createElement('div');
         label.className = 'row-label';
-        label.textContent = `Række ${row}:`;
+        label.textContent = `Row ${row}:`;
         rowDiv.appendChild(label);
 
         // Sæder i rækken
@@ -125,11 +125,11 @@ function updateSelectedInfo() {
     document.getElementById('totalPrice').textContent = total;
 
     if (count === 0) {
-        document.getElementById('seatList').textContent = 'Ingen sæder valgt';
+        document.getElementById('seatList').textContent = 'No seats chosen';
         document.getElementById('bookButton').disabled = true;
     } else {
         const seatText = selectedSeats
-            .map(s => `Række ${s.seatRow}, Sæde ${s.seatNumber}`)
+            .map(s => `Row ${s.seatRow}, Seat ${s.seatNumber}`)
             .join(' | ');
         document.getElementById('seatList').textContent = seatText;
         document.getElementById('bookButton').disabled = false;
@@ -144,7 +144,7 @@ document.getElementById('bookButton').addEventListener('click', async () => {
 
     const bookButton = document.getElementById('bookButton');
     bookButton.disabled = true;
-    bookButton.textContent = 'Booker...';
+    bookButton.textContent = 'Booking...';
 
     try {
         const response = await postObjectAsJson('http://localhost:8080/api/bookings', {
@@ -174,23 +174,23 @@ document.getElementById('bookButton').addEventListener('click', async () => {
 
             setTimeout(() => {
                 window.location.href = 'index.html';
-            }, 2000);
+            }, 3000);
 
         } else {
             const errorText = await response.text();
             messageDiv.className = 'message error';
             messageDiv.textContent = ` ${errorText}`;
             bookButton.disabled = false;
-            bookButton.textContent = 'Book billetter';
+            bookButton.textContent = 'Book tickets';
         }
 
     } catch (error) {
-        console.error('Booking fejl:', error);
+        console.error('Booking error. ', error);
         const messageDiv = document.getElementById('message');
         messageDiv.className = 'message error';
-        messageDiv.textContent = ' Booking fejlede. Prøv igen.';
+        messageDiv.textContent = ' Booking error. Try again.';
         bookButton.disabled = false;
-        bookButton.textContent = 'Book billetter';
+        bookButton.textContent = 'Book tickets';
     }
 });
 
