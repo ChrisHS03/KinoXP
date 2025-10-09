@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Book billetter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Book billetter</h1>
+
+<div id="showInfo">
+    <h2 id="movieTitle">Indlæser...</h2>
+    <p id="showDetails"></p>
+</div>
+
+<div class="screen">LÆRRED</div>
+
+<div class="legend">
+    <div class="legend-item">
+        <div class="legend-box" style="background: #e0e0e0;"></div>
+        <span>Ledig</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-box" style="background: #51cf66;"></div>
+        <span>Valgt</span>
+    </div>
+    <div class="legend-item">
+        <div class="legend-box" style="background: #ff6b6b;"></div>
+        <span>Optaget</span>
+    </div>
+</div>
+
+<div id="seatGrid" class="seat-grid">
+    <!-- Sæder genereres her -->
+</div>
+
+<div id="selectedInfo">
+    <h3>Valgte sæder: <span id="seatCount">0</span></h3>
+    <p id="seatList">Ingen sæder valgt</p>
+    <p><strong>Total pris: <span id="totalPrice">0</span> kr</strong></p>
+</div>
+
+<div id="message"></div>
+
+<button id="bookButton" disabled>Book billetter</button>
+
+<p><a href="index.html">Tilbage til forsiden</a></p>
+
+<script type="module" src="js/bookticket.js"></script>
+</body>
+</html>
