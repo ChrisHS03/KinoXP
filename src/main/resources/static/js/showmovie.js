@@ -1,9 +1,10 @@
-import {fetchAnyUrl, fetchSession} from "./modulejson.js";
+import {deleteObjectAsJson, fetchAnyUrl, fetchSession} from "./modulejson.js";
 
 
 let urlGetMovieID = getMovieIdFromUrl()
 const urlGetMovie = "http://localhost:8080/movie/"
 const urlGetShows = "http://localhost:8080/shows/"
+const urlDeleteShow = "http://localhost:8080/deleteshow/"
 
 console.log("vi er inde i en film")
 
@@ -14,18 +15,19 @@ function getMovieIdFromUrl() {
 
 function displayMovie(movie) {
     console.log("vi henter values fra en film")
-    document.getElementById("movieTitle").textContent = `Title: ${movie.movie_title}`
-    document.getElementById("movieDescription").textContent = `Description: ${movie.movie_description}`;
-    document.getElementById("movieDuration").textContent = `Duration: ${movie.movie_duration}`;
-    document.getElementById("movieActors").textContent = `Actors: ${movie.movie_actors}`;
-    document.getElementById("movieAgeRequirement").textContent = `Age requirement: ${movie.movie_age_req}`;
-    document.getElementById("movieStart").textContent = `Movie period start: ${movie.movie_period_start}`;
-    document.getElementById("movieEnd").textContent = `Movie period end: ${movie.movie_period_end}`;
-    document.getElementById("movieGenre").textContent = `Genre: ${movie.movie_genre}`;
+    document.getElementById("movieTitle").textContent = `${movie.movie_title}`
+    document.getElementById("movieDescription").textContent = `${movie.movie_description}`;
+    document.getElementById("movieDuration").textContent = ` ${movie.movie_duration}`;
+    document.getElementById("movieActors").textContent = ` ${movie.movie_actors}`;
+    document.getElementById("movieAgeRequirement").textContent = `${movie.movie_age_req}`;
+    document.getElementById("movieStart").textContent = `${movie.movie_period_start}`;
+    document.getElementById("movieEnd").textContent = ` ${movie.movie_period_end}`;
+    document.getElementById("movieGenre").textContent = `${movie.movie_genre}`;
     const photo = document.getElementById("moviePhoto");
     photo.src = movie.movie_photo_href;
     photo.alt = movie.movie_title;
-    photo.style.maxWidth = "200px";}
+    photo.style.maxWidth = "200px";
+}
 
 async function fetchMovie() {
     let finalUrl = urlGetMovie + urlGetMovieID
@@ -39,7 +41,7 @@ async function fetchMovie() {
     }
 }
 
-function actionShowMovie(){
+function actionShowMovie() {
     fetchMovie()
 }
 
@@ -61,10 +63,10 @@ async function fetchShows() {
     }
 }
 
-function fillDropDown(show){
-    const  el = document.createElement("option")
+function fillDropDown(show) {
+    const el = document.createElement("option")
     el.textContent = show.showTime
-    el.value=show.showId
+    el.value = show.showId
     ddShows.appendChild(el)
 
 }
@@ -79,21 +81,46 @@ pbBook.onclick = async function (event) {
     window.location.href = `bookticket.html?id=${ddShows.value}`;
 }
 
-// ------ Create show
+// ------ Create show  + delete btn
 
 
 let currentUser = null;
+const pbCreateShow = document.getElementById("pbCreateShow");
+const pbDelete = document.getElementById("pbDeleteShow");
 
 async function init() {
     currentUser = await fetchSession(); // vent på session-data
     console.log(currentUser?.role);
 
     // Skjul Create Show-knap hvis ikke EMPLOYEE
-    const btnCreateShow = document.getElementById("btnCreateShow");
     if (!currentUser || currentUser.role !== "EMPLOYEE") {
-        btnCreateShow.style.display = "none";
+        pbCreateShow.style.display = "none";
+        pbDelete.style.display = "none";
     }
 
-    // Hent film
-    await fetchMovies();
+
 }
+pbDelete.onclick = async function (event) {
+    const selectedShowId = ddShows.value;
+    const selectedOption = ddShows.querySelector(`option[value="${selectedShowId}"]`);
+    ddShows.removeChild(selectedOption);
+
+    await deleteObjectAsJson(urlDeleteShow + selectedShowId)
+    console.log("Show fjernet fra dropdown");
+}
+
+pbCreateShow.onclick = async function (event) {
+    window.location.href = `showform.html?id=${urlGetMovieID}`;
+}
+
+init()
+
+
+
+
+
+
+
+
+
+

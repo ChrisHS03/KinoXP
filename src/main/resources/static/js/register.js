@@ -14,7 +14,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     );
 
     if (registerResponse.ok) {
-        document.getElementById('message').textContent = 'Konto oprettet! Logger ind...';
+        document.getElementById('message').textContent = 'Account registered. Logging in';
 
 
         const loginResponse = await postObjectAsJson(
@@ -27,13 +27,13 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
                 window.location.href = 'index.html';
             }, 1000);
         } else {
-            document.getElementById('message').textContent = 'Konto oprettet, men login fejlede. Gå til login siden.';
+            document.getElementById('message').textContent = 'Account registered, but login failed. Go to login page.';
             setTimeout(() => {
                 window.location.href = 'login.html';
             }, 2000);
         }
     } else {
         const errorText = await registerResponse.text();
-        document.getElementById('message').textContent = 'Fejl: ' + errorText;
+        document.getElementById('message').textContent = 'Error: ' + errorText;
     }
 });

@@ -5,27 +5,29 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+<p><a class="btn1" href="index.html">Go to front page</a></p>
 <div class="container">
     <h1 class="Login">Login</h1>
 
     <form id="loginForm">
-        <label for="username">Brugernavn:</label>
+        <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
         <br><br>
 
-        <label for="password">Adgangskode:</label>
+        <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <br><br>
 
-        <button type="submit">Log ind</button>
+        <button class="btn1" type="submit">Login</button>
     </form>
 
     <p id="message"></p>
 
-    <p><a href="register.html">Opret konto</a></p>
-    <p><a href="index.html">Tilbage</a></p>
+    <p><a class="btn1" href="register.html">Register</a></p>
+
 </div>
 
 <script type="module" src="js/login.js"></script>
