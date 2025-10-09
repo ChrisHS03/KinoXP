@@ -157,7 +157,7 @@ document.getElementById('bookButton').addEventListener('click', async () => {
         if (response.ok) {
             const data = await response.json();
             messageDiv.className = 'message success';
-            messageDiv.textContent = `✅ ${data.message}! Booking ID: ${data.bookingId}`;
+            messageDiv.textContent = ` ${data.message}! Booking ID: ${data.bookingId}`;
 
             // Disable alle valgte sæder
             selectedSeats.forEach(s => {
@@ -179,7 +179,7 @@ document.getElementById('bookButton').addEventListener('click', async () => {
         } else {
             const errorText = await response.text();
             messageDiv.className = 'message error';
-            messageDiv.textContent = `❌ ${errorText}`;
+            messageDiv.textContent = ` ${errorText}`;
             bookButton.disabled = false;
             bookButton.textContent = 'Book billetter';
         }
@@ -188,7 +188,7 @@ document.getElementById('bookButton').addEventListener('click', async () => {
         console.error('Booking fejl:', error);
         const messageDiv = document.getElementById('message');
         messageDiv.className = 'message error';
-        messageDiv.textContent = '❌ Booking fejlede. Prøv igen.';
+        messageDiv.textContent = ' Booking fejlede. Prøv igen.';
         bookButton.disabled = false;
         bookButton.textContent = 'Book billetter';
     }
