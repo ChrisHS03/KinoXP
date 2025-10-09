@@ -7,27 +7,27 @@
     <link rel="stylesheet" href="css/bookingstyle.css">
 </head>
 <body>
-<h1>Book billetter</h1>
+<h1>Book Tickets</h1>
 
 <div id="showInfo">
-    <h2 id="movieTitle">Indlæser...</h2>
+    <h2 id="movieTitle">Loading...</h2>
     <p id="showDetails"></p>
 </div>
 
-<div class="screen">LÆRRED</div>
+<div class="screen">SCREEN</div>
 
 <div class="legend">
     <div class="legend-item">
         <div class="legend-box" style="background: #e0e0e0;"></div>
-        <span>Ledig</span>
+        <span>Available</span>
     </div>
     <div class="legend-item">
         <div class="legend-box" style="background: #51cf66;"></div>
-        <span>Valgt</span>
+        <span>Chosen seats</span>
     </div>
     <div class="legend-item">
         <div class="legend-box" style="background: #ff6b6b;"></div>
-        <span>Optaget</span>
+        <span>Occupied</span>
     </div>
 </div>
 
@@ -36,16 +36,16 @@
 </div>
 
 <div id="selectedInfo">
-    <h3>Valgte sæder: <span id="seatCount">0</span></h3>
-    <p id="seatList">Ingen sæder valgt</p>
-    <p><strong>Total pris: <span id="totalPrice">0</span> kr</strong></p>
+    <h3>Chosen seats: <span id="seatCount">0</span></h3>
+    <p id="seatList">No seats chosen</p>
+    <p><strong>Total price: <span id="totalPrice">0</span> DKK</strong></p>
 </div>
 
 <div id="message"></div>
 
-<button id="bookButton" disabled>Book billetter</button>
+<button id="bookButton" disabled>Book Tickets</button>
 
-<p><a href="index.html">Tilbage til forsiden</a></p>
+<p><a class="btn1" href="index.html">Back to frontpage</a></p>
 
 <script type="module" src="js/bookticket.js"></script>
 </body>

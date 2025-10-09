@@ -14,9 +14,9 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     );
 
     if (response.ok) {
-        document.getElementById('message').textContent = 'Login succesfuldt!';
+        document.getElementById('message').textContent = 'Login successful!';
         window.location.href = 'index.html';
     } else {
-        document.getElementById('message').textContent = 'Forkert brugernavn eller adgangskode';
+        document.getElementById('message').textContent = 'Wrong username or password';
     }
 });
