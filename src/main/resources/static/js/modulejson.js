@@ -77,7 +77,7 @@ async function fetchSession() {
         });
 
         if (!response.ok) {
-            console.log("Bruger er ikke logget ind");
+            console.log("User not signed in");
             return null;
         }
 
@@ -85,7 +85,7 @@ async function fetchSession() {
         console.log("Session user:", user);
         return user;
     } catch (err) {
-        console.error("Fejl ved hent af session:", err);
+        console.error("Error fetching session:", err);
         return null;
     }
 }
