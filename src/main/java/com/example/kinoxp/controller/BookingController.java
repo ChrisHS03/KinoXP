@@ -55,7 +55,7 @@ public class BookingController {
 
             Integer userId = (Integer) session.getAttribute("userId");
             if (userId == null) {
-                return ResponseEntity.status(401).body("Du skal være logget ind");
+                return ResponseEntity.status(401).body("You must be signed in");
             }
 
 
@@ -67,7 +67,7 @@ public class BookingController {
 
             Map<String, Object> response = new HashMap<>();
             response.put("bookingId", booking.getBookingId());
-            response.put("message", "Reservation oprettet");
+            response.put("message", "Booking created");
             response.put("numberOfSeats", booking.getNumberOfSeats());
 
             return ResponseEntity.ok(response);
@@ -77,11 +77,9 @@ public class BookingController {
         } catch (IllegalStateException e) {
             return ResponseEntity.status(409).body(e.getMessage()); // 409 Conflict
         } catch (Exception e) {
-            return ResponseEntity.status(500).body("Reservation fejlede: " + e.getMessage());
+            return ResponseEntity.status(500).body("Booking failed: " + e.getMessage());
         }
     }
-
-
 
 
     public static class BookingRequest {
