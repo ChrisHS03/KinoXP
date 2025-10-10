@@ -2,9 +2,9 @@ import {deleteObjectAsJson, fetchAnyUrl, fetchSession} from "./modulejson.js";
 
 
 let urlGetMovieID = getMovieIdFromUrl()
-const urlGetMovie = "http://localhost:8080/movie/"
-const urlGetShows = "http://localhost:8080/shows/"
-const urlDeleteShow = "http://localhost:8080/deleteshow/"
+const urlGetMovie = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/movie/"
+const urlGetShows = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/shows/"
+const urlDeleteShow = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/deleteshow/"
 
 console.log("vi er inde i en film")
 

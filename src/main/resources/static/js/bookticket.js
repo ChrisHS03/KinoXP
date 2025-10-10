@@ -12,7 +12,7 @@ let selectedSeats = [];
 // Hent show info
 async function loadShowInfo() {
     try {
-        show = await fetchAnyUrl(`http://localhost:8080/api/shows/${showId}`);
+        show = await fetchAnyUrl(`https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/shows/${showId}`);
 
         if (!show) {
             alert('Show not found');
@@ -44,7 +44,7 @@ async function loadShowInfo() {
 // Hent bookede sæder
 async function loadBookedSeats() {
     try {
-        bookedSeats = await fetchAnyUrl(`http://localhost:8080/api/shows/${showId}/booked-seats`);
+        bookedSeats = await fetchAnyUrl(`https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/shows/${showId}/booked-seats`);
         console.log('Booked seats: ', bookedSeats);
     } catch (error) {
         console.error('Error loading booked seats. ', error);
@@ -147,7 +147,7 @@ document.getElementById('bookButton').addEventListener('click', async () => {
     bookButton.textContent = 'Booking...';
 
     try {
-        const response = await postObjectAsJson('http://localhost:8080/api/bookings', {
+        const response = await postObjectAsJson('https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/bookings', {
             showId: parseInt(showId),
             seats: selectedSeats
         });

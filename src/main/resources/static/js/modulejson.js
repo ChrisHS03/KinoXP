@@ -69,7 +69,7 @@ async function fetchAnyUrl(url) {
 
 
 async function fetchSession() {
-    const urlSession = "http://localhost:8080/api/auth/session";
+    const urlSession = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/auth/session";
     try {
         const response = await fetch(urlSession, {
             method: "GET",

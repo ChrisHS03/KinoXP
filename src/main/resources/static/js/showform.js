@@ -3,9 +3,9 @@ import {postObjectAsJson, fetchSession, fetchAnyUrl} from "./modulejson.js";
 console.log("Jeg er i showform")
 
 let urlGetMovieID = getMovieIdFromUrl()
-const urlGetMovie = "http://localhost:8080/movie/"
-const urlGetTheater = "http://localhost:8080/theater/"
-const showCreateUrl = "http://localhost:8080/createshow"
+const urlGetMovie = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/movie/"
+const urlGetTheater = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/theater/"
+const showCreateUrl = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/createshow"
 
 
 

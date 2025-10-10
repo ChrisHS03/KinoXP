@@ -2,7 +2,7 @@
 
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost:8080/api/auth/session', {
+        const response = await fetch('https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/auth/session', {
             credentials: 'include'
         });
 
@@ -30,7 +30,7 @@ async function checkSession() {
 
 async function logout() {
     try {
-        await fetch('http://localhost:8080/api/auth/logout', {
+        await fetch('https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/auth/logout', {
             method: 'POST',
             credentials: 'include'
         });

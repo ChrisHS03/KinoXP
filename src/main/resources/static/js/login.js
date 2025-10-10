@@ -9,7 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
     const password = document.getElementById('password').value;
 
     const response = await postObjectAsJson(
-        'http://localhost:8080/api/auth/login',
+        'https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/auth/login',
         { username, password }
     );
 

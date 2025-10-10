@@ -9,7 +9,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
     const password = document.getElementById('password').value;
 
     const registerResponse = await postObjectAsJson(
-        'http://localhost:8080/api/auth/register-customer',
+        'https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/auth/register-customer',
         { username, password }
     );
 
@@ -18,7 +18,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
 
 
         const loginResponse = await postObjectAsJson(
-            'http://localhost:8080/api/auth/login',
+            'https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/api/auth/login',
             { username, password }
         );
 

@@ -3,8 +3,8 @@ import {fetchAnyUrl, deleteObjectAsJson, fetchSession} from "./modulejson.js";
 console.log("vi er i movietable")
 
 
-const urlGetMovies = "http://localhost:8080/movies"
-const urlDeleteMovie = "http://localhost:8080/deletemovie/"
+const urlGetMovies = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/movies"
+const urlDeleteMovie = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/deletemovie/"
 const tblMovies = document.getElementById("tblMovies")
 
 

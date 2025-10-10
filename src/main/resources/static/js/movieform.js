@@ -2,7 +2,7 @@ import {postObjectAsJson, fetchAnyUrl, updateObjectAsJson} from "./modulejson.js
 console.log("Jeg er i movieForm")
 
 let urlGetMovieID = getMovieIdFromUrl()
-const urlGetMovie = "http://localhost:8080/movie/"
+const urlGetMovie = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/movie/"
 
 function getMovieIdFromUrl() {
     const params = new URLSearchParams(window.location.search);
@@ -45,8 +45,8 @@ checkForId()
 document.addEventListener('DOMContentLoaded',createFormEventListener)
 
 let movieForm;
-const movieCreateUrl = "http://localhost:8080/createmovie"
-const movieUpdateUrl = "http://localhost:8080/updatemovie/"
+const movieCreateUrl = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/createmovie"
+const movieUpdateUrl = "https://kinoxpback-h7arcge9c2ahdxfu.uksouth-01.azurewebsites.net/updatemovie/"
 
 
 
