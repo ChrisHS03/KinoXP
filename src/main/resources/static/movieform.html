@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Movie</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<p><a class="btn1" href="index.html">Go to front page</a></p>
+<body>
+<form id="formMovie">
+    <div class="form-group"><label for="inpTitle"> Title </label>
+        <input type="text" name="movie_title" class="inpField" id="inpTitle" required>
+    </div>
+    <div class="form-group"><label for="inpDescription"> Description </label>
+        <input type="text" name="movie_description" class="inpField" id="inpDescription" required>
+    </div>
+    <div class="form-group"><label for="inpDuration"> Duration </label>
+        <input type="number" name="movie_duration" class="inpField" id="inpDuration" required>
+    </div>
+    <div class="form-group"><label for="inpActors"> Actors </label>
+        <input type="text" name="movie_actors" class="inpField" id="inpActors" required>
+    </div>
+    <div class="form-group"><label for="inpAgeReq"> Age requirement </label>
+        <input type="number" name="movie_age_req" class="inpField" id="inpAgeReq" required>
+    </div>
+    <div class="form-group"><label for="inpMovieStart"> Movie period start </label>
+        <input type="date" name="movie_period_start" class="inpField" id="inpMovieStart" required>
+    </div>
+    <div class="form-group"><label for="inpMovieEnd"> Movie period End </label>
+        <input type="date" name="movie_period_end" class="inpField" id="inpMovieEnd" required>
+    </div>
+    <div class="form-group">
+        <label for="inpGenre">Genre</label>
+        <select name="movie_genre" id="inpGenre" class="inpField" required>
+            <option value="">Select a genre</option>
+            <option value="ACTION">Action</option>
+            <option value="ADVENTURE">Adventure</option>
+            <option value="COMEDY">Comedy</option>
+            <option value="DRAMA">Drama</option>
+            <option value="HORROR">Horror</option>
+            <option value="THRILLER">Thriller</option>
+            <option value="SCIENCE_FICTION">Science Fiction</option>
+            <option value="FANTASY">Fantasy</option>
+            <option value="ROMANCE">Romance</option>
+            <option value="CRIME">Crime</option>
+            <option value="MYSTERY">Mystery</option>
+            <option value="DOCUMENTARY">Documentary</option>
+            <option value="ANIMATION">Animation</option>
+            <option value="FAMILY">Family</option>
+            <option value="WAR">War</option>
+            <option value="WESTERN">Western</option>
+            <option value="MUSICAL">Musical</option>
+            <option value="BIOGRAPHY">Biography</option>
+            <option value="HISTORY">History</option>
+            <option value="SPORT">Sport</option>
+            <option value="SUPERHERO">Superhero</option>
+        </select>
+    </div>
+    <div class="form-group"><label for="inpPhotoHref"> Photo Link </label>
+        <input type="text" name="movie_photo_href" class="inpField" id="inpPhotoHref" required>
+    </div>
+    <button class="btn1" type="submit" title="Save">Save Movie</button>
+</form>
+<script type="module" src="js/movieform.js"></script>
+</body>
+</html>

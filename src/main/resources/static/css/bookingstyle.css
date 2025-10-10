@@ -1,0 +1,162 @@
+/* GENERELT LAYOUT */
+
+
+/* INFORMATIONSBOKS */
+#showInfo {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* LÆRRED */
+.screen {
+    background: #1c1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* SÆDEGRID */
+.seat-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 20px auto;
+    align-items: center; /* <- centrér indholdet inde i grid’et */
+}
+
+/* RÆKKER */
+.row {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.row-label {
+    width: 60px;
+    font-weight: bold;
+    text-align: right;
+    color: #000;
+}
+
+/* SÆDER */
+.seat {
+    width: 38px;
+    height: 38px;
+    border: 2px solid #ccc;
+    background: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    transition: all 0.2s ease;
+}
+
+
+
+
+
+.seat:hover:not(.occupied) {
+    background: #e30613;
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* OPTAGET SÆDER */
+.seat.occupied {
+    background: #ff6b6b;
+    color: #fff;
+    cursor: not-allowed;
+    border-color: #ff6b6b;
+}
+
+/* VALGTE SÆDER */
+.seat.selected {
+    background: #28a745; /* flot biograf-grøn */
+    color: #fff;
+    border-color: #1e7e34;
+}
+
+
+/* LEGENDEN */
+.legend {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-box {
+    width: 30px;
+    height: 30px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+/* INFO OM VALG */
+#selectedInfo {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* BOOKING KNAP */
+#bookButton {
+    background: #e30613;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+#bookButton:hover {
+    background: #b60510;
+}
+
+#bookButton:disabled {
+    background: #bbb;
+    cursor: not-allowed;
+}
+
+/* BESKEDER */
+#message {
+    margin: 15px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    text-align: center;
+    font-weight: bold;
+}
+
+#message.success {
+    background: #e6ffe6;
+    color: #2b8a3e;
+    display: block;
+}
+
+#message.error {
+    background: #ffe3e3;
+    color: #c92a2a;
+    display: block;
+}
